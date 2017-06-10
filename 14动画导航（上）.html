@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画导航（上）</title>
+	<style>
+		*{margin:0;padding:0}
+		.stage{
+			width:140px;
+			margin:100px auto 0;
+			perspective:500px;
+		}
+		.stage ul{
+			width: 100px;
+			background-color: #A6BC40;
+			padding:20px;
+			transform:rotateY(90deg);
+			animation:zhuan 1s ease 0s forwards;
+		}
+		.stage li{
+			list-style-type:none;
+			height: 30px;
+			line-height: 30px;
+		}
+		.stage li a{
+			color:white;
+			text-decoration:none;
+			font-weight: bold;
+		}
+
+		@keyframes zhuan{
+			0%{
+				transform:rotateY(90deg);
+			}
+			40%{
+				transform:rotateY(-20deg);
+			}
+			60%{
+				transform:rotateY(10deg);
+			}
+			80%{
+				transform:rotateY(-5deg);
+			}
+			100%{
+				transform:rotateY(0deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="stage">
+		<ul>
+			<li><a href="">cooperate</a></li>
+			<li><a href="">retail</a></li>
+			<li><a href="">healthcare</a></li>
+			<li><a href="">education</a></li>
+			<li><a href="">hospitality</a></li>
+		</ul>
+	</div>
+</body>
+</html>

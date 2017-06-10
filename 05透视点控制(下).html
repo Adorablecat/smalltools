@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>透视点控制</title>
+	<style>
+		*{margin:0;padding:0}
+		.nav-wrapper{
+			width: 100%;
+			height: 70px;
+			background-color: #5e5e5e;
+			position:fixed;
+			left:0;
+			bottom:0;
+		}
+		.nav{
+			width: 618px;
+			height: 100%;
+			margin:0 auto;
+		}
+		.nav div{
+			width: 200px;
+			height: 100%;
+			margin:0 3px;
+			float: left;
+			perspective:600px;   /*景深给各自的舞台加，不要给整个舞台加*/
+			perspective-origin:center 0px;
+		}
+		.nav ul{
+			width: 100%;
+			height: 100%;
+			position:relative;
+			transform-style:preserve-3d;
+			transition:all 1s ease 0s;
+		}
+		.nav ul li{
+			width: 100%;
+			height: 100%;
+			list-style-type:none;
+			position:absolute;
+			left:0;
+			top:0;
+		}
+		.nav ul li:nth-of-type(1){
+			background-color: #5e5e5e;
+			transform:translateZ(35px);
+		}
+		.nav ul li:nth-of-type(2){
+			background-color: #a3bb43;
+			transform:rotateX(-90deg) translateZ(35px);
+		}
+		.nav ul a{
+			width: 100%;
+			height: 100%;
+			display:block;
+			color:#e2e2e2;
+			text-decoration:none;
+			text-align: center;
+			/*line-height: 70px;
+			font-size: 21px;
+			font-family: "Microsoft Yahei";
+			font:font-style font-weight font-size/line-height font-family;*/
+			font:21px/70px "Microsoft Yahei";
+		}
+
+		.nav div:hover ul{
+			transform:rotateX(90deg);
+		}
+	</style>
+</head>
+<body>
+	http://www.idea-source.net/service/
+
+
+	<div class="nav-wrapper">
+		<div class="nav">
+			<div>
+				<ul>   <!--ul表示立方体，li表示立方体的面-->
+					<li><a href="#">服务范围</a></li>
+					<li><a href="#">服务范围</a></li>
+				</ul>
+			</div>
+			<div>
+				<ul>   <!--ul表示立方体，li表示立方体的面-->
+					<li><a href="#">实施感悟</a></li>
+					<li><a href="#">实施感悟</a></li>
+				</ul>
+			</div>
+			<div>
+				<ul>   <!--ul表示立方体，li表示立方体的面-->
+					<li><a href="#">荣誉客户</a></li>
+					<li><a href="#">荣誉客户</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

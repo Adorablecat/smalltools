@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>圆环过渡</title>
+	<style>
+		*{margin:0;padding:0}
+		.circle{
+			width: 156px;
+			height: 156px;
+			margin:100px auto 0;
+			background: url('images/49/person.png') no-repeat center center;
+			position:relative;
+		}
+		.circle div{
+			width: 78px;
+			height: 156px;
+			background: url('images/49/circle.png');
+			position:absolute;
+			left:0;
+			top:0;
+			clip:rect(0px, 78px, 156px, 0px);
+			transition:all 0.5s ease 0s;
+		}
+		.circle div.circle-right{
+			right:0;
+			left:auto;
+			background-position:right top;
+		}
+
+		.circle:hover .circle-left{
+			clip:rect(156px, 78px, 156px, 0px);
+		}
+		.circle:hover .circle-right{
+			clip:rect(0px, 78px, 0, 0px);
+		}
+	</style>
+</head>
+<body>
+	<div class="circle">
+		<div class="circle-left"></div>
+		<div class="circle-right"></div>
+	</div>
+</body>
+</html>

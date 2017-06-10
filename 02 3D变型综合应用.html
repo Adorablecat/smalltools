@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3D变型综合应用</title>
+	<style>
+		*{margin:0;padding:0}
+		div{
+			width: 300px;
+			height: 300px;
+			border:10px solid blue;
+			margin:100px auto 0;
+			perspective:600px;
+		}
+
+		div img{
+			transform: rotateX(30deg) rotateY(40deg) translateZ(500px);
+			transition:all 2s ease 0s;
+		}
+
+		div:hover img{
+			transform:skew(0, 0);   /*不变型，保持坐标轴的原状*/
+		}
+	</style>
+</head>
+<body>
+	<div><img src="images/45.jpg" alt=""></div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画导航（下）</title>
+	<style>
+		*{margin:0;padding:0}
+		.stage{
+			width:140px;
+			margin:100px auto 0;
+			perspective:500px;
+			position:relative;
+		}
+		.stage ul{
+			width: 100px;
+			background-color: #A6BC40;
+			padding:20px;
+			transform:rotateY(90deg);
+			/* animation:zhuan 1s ease 0s forwards; */
+			position:absolute;
+			left:0;
+			top:90px;
+			/* display:none; */
+		}
+		.stage.on ul{
+			animation:zhuan 1s ease 0s forwards;
+		}
+		/* .stage.on ul{
+			display:block;
+		} */
+		.stage li{
+			list-style-type:none;
+			height: 30px;
+			line-height: 30px;
+		}
+		.stage li a{
+			color:white;
+			text-decoration:none;
+			font-weight: bold;
+		}
+		.stage div{
+			width: 100px;
+			height: 50px;
+			background-color: #F5F6F8;
+			padding:20px;
+			line-height: 50px;
+			color:#676769;
+		}
+		.stage.on div{
+			background-color: #A6BC40;
+		}
+
+		@keyframes zhuan{
+			0%{
+				transform:rotateY(90deg);
+			}
+			40%{
+				transform:rotateY(-20deg);
+			}
+			60%{
+				transform:rotateY(10deg);
+			}
+			80%{
+				transform:rotateY(-5deg);
+			}
+			100%{
+				transform:rotateY(0deg);
+			}
+		}
+	</style>
+	<script>
+		window.onload = function(){
+			var menu = document.getElementById('menu');
+
+			//当鼠标移上菜单的时候，给它加on
+			menu.onmouseover = function(){
+				menu.className="stage on";
+			}
+
+			//当鼠标离开菜单的时候，去掉on
+			menu.onmouseout = function(){
+				menu.className="stage";
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="stage" id="menu">
+		<div>projects</div>
+		<ul>
+			<li><a href="">cooperate</a></li>
+			<li><a href="">retail</a></li>
+			<li><a href="">healthcare</a></li>
+			<li><a href="">education</a></li>
+			<li><a href="">hospitality</a></li>
+		</ul>
+	</div>
+</body>
+</html>
